@@ -1,0 +1,154 @@
+import sys
+import os
+import hashlib
+import hmac
+import base64
+import requests
+import time
+
+
+class api_check:
+
+    
+    def __init__(self,access,secret):
+        self.access=access
+        self.secret=secret
+
+
+           
+    def vpc_check(self):
+
+        timestamp = int(time.time() * 1000)
+        timestamp = str(timestamp)
+            
+        access_key = self.access	# access key id (from portal or Sub Account)
+        secret_key = self.secret   # secret key (from portal or Sub Account)
+        secret_key = bytes(secret_key).encode("utf-8")
+
+        method = "GET"
+        uri = "/vpc/v2/getVpcList?responseFormatType=json"
+
+        message = method + " " + uri + "\n" + timestamp + "\n" + access_key
+        message = bytes(message).encode("utf-8")
+        signingKey = base64.b64encode(hmac.new(secret_key, message, digestmod=hashlib.sha256).digest())
+        
+        URL = 'https://ncloud.apigw.ntruss.com/vpc/v2/getVpcList?responseFormatType=json' 
+
+        headers = {'x-ncp-apigw-timestamp': timestamp, 
+                   'x-ncp-iam-access-key':  access_key,
+                   'x-ncp-apigw-signature-v2': signingKey
+                   }
+
+        # 'Content-Type': 'application/json; UTF-8'
+        res = requests.get(URL, headers=headers)
+        res.request 
+
+        if res.status_code != 200:
+            print("Check Access & Secret Key")
+            exit()
+    
+        total_row=res.json()['getVpcListResponse']['totalRows']
+        if total_row >= 1:
+            # Have VPC
+            return False
+        else:
+            #Haven't VPC
+            return True
+
+        
+        
+    def server_check(self):
+
+        timestamp = int(time.time() * 1000)
+        timestamp = str(timestamp)
+            
+        access_key = self.access	# access key id (from portal or Sub Account)
+        secret_key = self.secret   # secret key (from portal or Sub Account)
+        secret_key = bytes(secret_key).encode("utf-8")
+
+        method = "GET"
+        uri = "/vserver/v2/getServerInstanceList?responseFormatType=json"
+
+        message = method + " " + uri + "\n" + timestamp + "\n" + access_key
+        message = bytes(message).encode("utf-8")
+        signingKey = base64.b64encode(hmac.new(secret_key, message, digestmod=hashlib.sha256).digest())
+        
+        URL = 'https://ncloud.apigw.ntruss.com/vserver/v2/getServerInstanceList?responseFormatType=json' 
+
+        headers = {'x-ncp-apigw-timestamp': timestamp, 
+                   'x-ncp-iam-access-key':  access_key,
+                   'x-ncp-apigw-signature-v2': signingKey
+                   }
+
+        # 'Content-Type': 'application/json; UTF-8'
+        res = requests.get(URL, headers=headers)
+
+        res.request 
+        total_row=res.json()['getServerInstanceListResponse']['totalRows']
+        if total_row >= 1:
+            return False
+        else:
+            return True
+
+    
+    def lb_check(self):
+     
+        timestamp = int(time.time() * 1000)
+        timestamp = str(timestamp)
+            
+        access_key = self.access	# access key id (from portal or Sub Account)
+        secret_key = self.secret   # secret key (from portal or Sub Account)
+        secret_key = bytes(secret_key).encode("utf-8")
+
+        method = "GET"
+        uri = "/vloadbalancer/v2/getLoadBalancerInstanceList?responseFormatType=json"
+
+        message = method + " " + uri + "\n" + timestamp + "\n" + access_key
+        message = bytes(message).encode("utf-8")
+        signingKey = base64.b64encode(hmac.new(secret_key, message, digestmod=hashlib.sha256).digest())
+        
+        URL = 'https://ncloud.apigw.ntruss.com/vloadbalancer/v2/getLoadBalancerInstanceList?responseFormatType=json' 
+
+        headers = {'x-ncp-apigw-timestamp': timestamp, 
+                   'x-ncp-iam-access-key':  access_key,
+                   'x-ncp-apigw-signature-v2': signingKey
+                   }
+
+        # 'Content-Type': 'application/json; UTF-8'
+        res = requests.get(URL, headers=headers)
+        res.request 
+
+        total_row=res.json()['getLoadBalancerInstanceListResponse']['totalRows']
+        if total_row >= 1:
+            return False
+        else:
+            return True
+
+
+        
+if __name__ == "__main__":
+
+    if len(sys.argv) <=2:
+        print("Write Access Key and Secret Key plz")
+    else:   
+
+        print("====================")
+        print("0/1(VPC) 0/1(Server) 0/1(LB) ex) 110 --> Have VPC & Server ")
+        print("====================")
+        a = sys.argv[1]
+        b = sys.argv[2]
+        test=api_check(a,b)
+        vpc=test.vpc_check()
+        if vpc== True:
+            print ("000")
+        else:
+            server=test.server_check()
+            if server ==True:
+                print ("100")
+            else:
+                lb=test.lb_check()
+                if lb ==True:
+                    print ("110")
+                else:
+                    print ("111")
+        print("====================")
