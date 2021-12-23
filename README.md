@@ -15,10 +15,11 @@
 네이버클라우드플랫폼의 다양한 서비스를 공유합니다.<br>
 다양한 아키텍처를 공부하면서 실제 많이 활용되고 있는 서비스간의 연계를 통해 해당 레포지토리를 보시는 분들에게 정보를 제공합니다.<br>
 
-## 상품 공부
+## 디렉토리 설명
 각각의 서비스들의 특징 및 필요시 데모 작성<br>
-1. AI API 데모
-2. 준비중
+1. [AI API 데모를 통하여 다양한 AI API 샘플 확인 가능(클릭시 이동)](https://github.com/park-moonkyu/NaverCloud/tree/main/ai_api_sample)
+2. [서비스 사용유무를 해당 api_check.py 를 통하여 확인 가능 (클릭시 이동)](https://github.com/park-moonkyu/NaverCloud/tree/main/check_api)
+
 ## 아키텍처 공부
 다양한 상품들간의 연계를 통해 아키텍처를 구성<br><br>
 1. lambda + Object Storage + OCR
