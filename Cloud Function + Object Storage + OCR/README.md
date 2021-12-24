@@ -1,7 +1,7 @@
 # Cloud Function + Object Storage + OCR
 
-자세한 사용 설명서 확인하기 : <https://postfiles.pstatic.net/MjAyMTEyMjRfMjI2/MDAxNjQwMzM3MzA0NzMy.1u-fWPiGzXSrbcCzxj2e6dBlbvU-EjtMnY9tZN3ZFQwg.lqsGh2HIajAzzsXkJpUFxcIduYt0496TGoDgSLge9Zkg.PNG.mk_crew/%EA%B2%B0%EA%B3%BC.png?type=w966>
 
+![zz](https://postfiles.pstatic.net/MjAyMTEyMjRfMjI2/MDAxNjQwMzM3MzA0NzMy.1u-fWPiGzXSrbcCzxj2e6dBlbvU-EjtMnY9tZN3ZFQwg.lqsGh2HIajAzzsXkJpUFxcIduYt0496TGoDgSLge9Zkg.PNG.mk_crew/%EA%B2%B0%EA%B3%BC.png?type=w966) </br></br>
 
 ## Cloud Function
 네이버클라우드플랫폼의 대표적인 Serverless 상품이다.<br>
