@@ -1,31 +1,13 @@
-# API를 활용한 서비스 사용여부 확인 및  삭제
-![zz](https://cdn.imweb.me/thumbnail/20201031/8d531d3f9227b.jpg) </br></br>
+# Cloud Function + Object Storage + OCR
 
 
-## 개요
-네이버클라우드플랫폼의 다양한 계정을 통해 서비스를 하는 경우가 존재합니다.<br>
-현재 콘솔에서 서비스들을 삭제하기 위해서는 직접 해당 계정에 로그인한뒤,<br>
-상품이용내역을 통해 확인을 하거나<br>
-계정관리 --> 현재비밀번호 입력 --> 회원탈퇴 --> 다음버튼 클릭 --> 서비스 반납현황을 통해서 현재 사용중인 서비스를 자세히 확인할수있습니다.<br>
-그렇다고 할지라도 VPC등은 여전히 지워지지않고 존재하게 됩니다.<br>
-이에 따라서 해당 API를 활용하여 서비스 사용유무를 체크할수있습니다.<br>
+## Cloud Function
+네이버클라우드플랫폼의 대표적인 Serverless 상품이다.<br>
+사용자는 인프라의 관리 부담없이 로직을 분산된 클라우드 환경에서 동작하고 결과를 반환한다.<br><br>
 
-## 설명
-현재는 계정들의 사용 유무를 체크할수있습니다.
+순서 : Action 생성 --> Trigger 생성 --> Action & Trigger 연결 --> 실행결과 확인 <br>
 
-체크 할수있는 항목 리스트
-1. VPC
-2. Server
-3. Load Balance
-4. Cloud DB for mySQL
-5. Global DNS
-6. Sub Account
-7. NAS
-8. Object Storage
+자세한 사용 설명서 확인하기 : <https://guide.ncloud-docs.com/docs/compute-compute-15-1>
 
-main 문에서는 저의 경우 0과 1을 활용하여 간단하게 유무를 CLI에서 확인하기위하여 무식하게 표현하였습니다.<br>
 
-CLI에서 확인하실때 api_check.py Access Key Secret Key 를 기입하여 확인할수있도록 설정해놨으며 입맛에 맞게 수정해서 사용하시면 됩니다.
-<br><br>
-이상 끝.
-
+### Trigger 활용ㅇ
