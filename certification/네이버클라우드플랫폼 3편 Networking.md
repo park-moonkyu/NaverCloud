@@ -29,6 +29,7 @@ Subnet을 이용하여 VPC안에서 Segment 생성관리가 가능하다.<br>
 VPC간 연결을 위한 네트워크 구성<br>
 내 VPC간 연결뿐만 아니라 다른계정과의 VPC연결도 가능<br>
 타계정 VPC연결시 로그인 ID,VPC ID, VPC명 입력 필요<br>
+Peering으ㄹ 할때는 각각을 서로 연결이 필요함.<br>
 
 ### VPC-ACG&NACL
 Network Access Control List의 약자로 VPC의 보안 강화요소<br>
