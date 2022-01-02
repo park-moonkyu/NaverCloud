@@ -1,16 +1,4 @@
 ---
-title:  "네이버클라우드플랫폼 AI/Application"
-excerpt: "네이버클라우드플랫폼 파헤치기 9편 "
-toc: true
-toc_sticky: true
-
-categories:
-  - cloud
-tags:
-  - 네이버클라우드플랫폼
-  
-last_modified_at: 2021-03-06T08:07:00-08:00
----
 
 # AI & Application
 네이버클라우드플랫폼의 AI서비스는 파파고와 클로바가 대표적이다.<br>

@@ -1,16 +1,3 @@
----
-title:  "네이버클라우드플랫폼 Storage"
-excerpt: "네이버클라우드플랫폼 파헤치기 7편 "
-toc: true
-toc_sticky: true
-
-categories:
-  - cloud
-tags:
-  - 네이버클라우드플랫폼
-  
-last_modified_at: 2021-03-01T08:07:00-08:00
----
 
 ## Object Storage
 __인터넷상에 원하는 데이터를 저장하고 사용할 수 있도록 구축된 오브젝트 스토리지<br>__

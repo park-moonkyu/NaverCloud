@@ -1,16 +1,3 @@
----
-title:  "네이버클라우드플랫폼 Analytcis"
-excerpt: "네이버클라우드플랫폼 파헤치기 10편 "
-toc: true
-toc_sticky: true
-
-categories:
-  - cloud
-tags:
-  - 네이버클라우드플랫폼
-  
-last_modified_at: 2021-03-06T08:07:00-08:00
----
 
 ## Monitoring(모니터링)
 클라우드 리소스 상태 모니터링 수행<br>

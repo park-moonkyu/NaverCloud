@@ -1,16 +1,3 @@
----
-title:  "네이버클라우드플랫폼 Database"
-excerpt: "네이버클라우드플랫폼 파헤치기 8편 "
-toc: true
-toc_sticky: true
-
-categories:
-  - cloud
-tags:
-  - 네이버클라우드플랫폼
-  
-last_modified_at: 2021-03-06T08:07:00-08:00
----
 
 ## Cloud DB for MySQL
 자동 Fail-over 지원 및 사용자 환경에 맞는 구성이 가능하다<br>
